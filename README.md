@@ -1,38 +1,38 @@
-# Análisis de la salud del sueño en relación al estilo de vida 🌙
+# Sleep Health and Lifestyle Analysis 🌙
 
-**Autores:** Santiago López y Aleix Pagès  
-**Fecha:** 24 de octubre de 2025  
+**Authors:** Santiago López & Aleix Pagès  
+**Date:** October 24, 2025  
 
-Este repositorio contiene un proyecto final de Data Science centrado en el análisis de un conjunto de datos sobre la salud del sueño y el estilo de vida (*Sleep Health and Lifestyle Dataset*). El objetivo principal de este trabajo es entender qué factores diarios impactan en la calidad del sueño, utilizando herramientas de análisis exploratorio, visualización y modelos estadísticos desarrollados en `R`.
+This repository contains a final Data Science project focused on analyzing a dataset about sleep health and lifestyle (*Sleep Health and Lifestyle Dataset*). The main goal of this work is to understand which daily factors impact sleep quality, using tools for exploratory data analysis, visualization, and statistical modeling developed in `R`.
 
-## 📁 Contenido del Repositorio
+## 📁 Repository Content
 
-- `Sleep_health_and_lifestyle_dataset.csv`: Conjunto de datos original utilizado en el análisis. Está compuesto por 400 observaciones y 13 variables (edad, duración del sueño, calidad del sueño, nivel de actividad física, nivel de estrés, categoría BMI, frecuencia cardíaca, pasos diarios, trastornos del sueño, entre otros).
-- `TrabajoDS_Aleix_Santi.Rmd`: Cuaderno en R Markdown con el código fuente del proyecto, análisis estadístico y generación de gráficas.
-- `TrabajoDS_Aleix_Santi.html`: Documento generado a partir del `.Rmd` que sirve como informe final interactivo completo, con explicaciones detalladas y conclusiones.
+- `Sleep_health_and_lifestyle_dataset.csv`: Original dataset used in the analysis. It consists of 400 observations and 13 variables (age, sleep duration, sleep quality, physical activity level, stress level, BMI category, heart rate, daily steps, sleep disorders, among others).
+- `TrabajoDS_Aleix_Santi.Rmd`: R Markdown notebook containing the project's source code, statistical analysis, and plot generation.
+- `TrabajoDS_Aleix_Santi.html`: Document generated from the `.Rmd` file that serves as a complete interactive final report, with detailed explanations and conclusions.
 
-## 🎯 Objetivos y Metodología
+## 🎯 Objectives and Methodology
 
-El estudio desarrolla los siguientes grandes bloques analíticos:
+The study develops the following main analytical blocks:
 
-1. **Análisis Exploratorio de Datos (EDA)**: Evaluación básica de la calidad de los datos (duplicados, NA, *outliers*) y análisis gráfico de distribuciones para variables categóricas y continuas.
-2. **Impacto del IMC en el sueño**: Evaluación formal (Mediante pruebas Kruskal-Wallis y Test de Dunn) de las diferencias en la calidad del sueño según la categoría de Índice de Masa Corporal.
-3. **Importancia de características**: Modelos de regresión regularizada (LASSO y Ridge) para identificar empíricamente qué variables explican de mejor manera la calidad del sueño.
-4. **Impacto directo del Estrés**: Análisis relacional y regresión enfocada en la profunda vinculación entre el nivel de estrés y el descenso en la calidad del sueño.
-5. **Predicción de Trastornos**: Algoritmo de Regresión Logística orientado a clasificar pacientes con trastornos (Insomnio y Apnea) en base a su nivel de estrés físico y psíquico. Se evalúa su rendimiento mediante curva ROC (AUC: 0.88).
-6. **Agrupación de Perfiles (Clustering)**: Uso de K-Means (optimizado con Elbow y Silhouette) junto a PCA para descubrir perfiles latentes en los pacientes, determinando así distintos grupos poblacionales de salud.
+1. **Exploratory Data Analysis (EDA)**: Basic evaluation of data quality (duplicates, NAs, *outliers*) and graphical analysis of distributions for categorical and continuous variables.
+2. **Impact of BMI on Sleep**: Formal evaluation (using Kruskal-Wallis and Dunn's Test) of differences in sleep quality according to Body Mass Index category.
+3. **Feature Importance**: Regularized regression models (LASSO and Ridge) to empirically identify which variables best explain sleep quality.
+4. **Direct Impact of Stress**: Relational and regression analysis focusing on the deep connection between stress levels and a decrease in sleep quality.
+5. **Sleep Disorder Prediction**: Logistic Regression algorithm aimed at classifying patients with disorders (Insomnia and Sleep Apnea) based on their physical and psychological stress levels. Performance is evaluated using a ROC curve (AUC: 0.88).
+6. **Profile Clustering**: Use of K-Means (optimized with Elbow and Silhouette methods) along with PCA to discover latent patient profiles, thereby identifying different health population groups.
 
-## 📊 Principales Conclusiones
+## 📊 Main Conclusions
 
-- Existe una fortísima **correlación negativa (-0.89) entre el nivel de estrés y la calidad del sueño**. Es el factor que más perjudica el descanso diario.
-- Físicamente, hay una caída destacable de la calidad del sueño a medida que los individuos transitan de un IMC "Normal" a un estado de **Sobrepeso u Obesidad**.
-- A través del agrupamiento, se definen **3 perfiles latentes** muy claros: (1) Estrés alto / Sueño bajo, (2) Sueños buenos / Físicamente activos, (3) Baja actividad física / Estrés medio.
+- There is a very strong **negative correlation (-0.89) between stress level and sleep quality**. It is the factor that most impairs daily rest.
+- Physically, there is a notable drop in sleep quality as individuals transition from a "Normal" BMI to an **Overweight or Obese** state.
+- Through clustering, **3 latent profiles** are clearly defined: (1) High Stress / Poor Sleep, (2) Good Sleep / Physically Active, (3) Low Physical Activity / Medium Stress.
 
-## 🛠️ Tecnologías y Librerías Utilizadas
+## 🛠️ Technologies and Libraries Used
 
-El análisis fue implementado en ambiente **R**, haciendo uso extensivo de las siguientes librerías:
+The analysis was implemented in the **R** environment, making extensive use of the following libraries:
 
-- **Preparación y Transformación**: `dplyr`, `tidyr`, `naniar`, `skimr`
-- **Visualización y Gráficos Exploratorios**: `ggplot2`, `corrplot`, `GGally`, `viridis`, `gridExtra`, `scales`
-- **Modelos y Algoritmos Analíticos**: `caret` (Regresión Logística), `glmnet` (Ridge / Lasso)
-- **Aprendizaje no supervisado (Cluster y PCA)**: `FactoMineR`, `factoextra`, `cluster`
+- **Data Preparation and Transformation**: `dplyr`, `tidyr`, `naniar`, `skimr`
+- **Visualization and Exploratory Plots**: `ggplot2`, `corrplot`, `GGally`, `viridis`, `gridExtra`, `scales`
+- **Models and Analytical Algorithms**: `caret` (Logistic Regression), `glmnet` (Ridge / Lasso)
+- **Unsupervised Learning (Clustering and PCA)**: `FactoMineR`, `factoextra`, `cluster`
